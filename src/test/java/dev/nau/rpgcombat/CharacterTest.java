@@ -44,4 +44,13 @@ class CharacterTest {
         assertEquals(1000, character.getHealth());
     }
 
+    @Test
+void testDeadCharacterCannotBeHealed() {
+    Character character = new Character("Undead");
+    character.receiveDamage(1000);
+    character.heal(100);
+
+    assertEquals(0, character.getHealth());
+}
+
 }
