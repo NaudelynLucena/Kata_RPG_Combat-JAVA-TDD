@@ -39,4 +39,14 @@ class CombatSystemTest {
         assertEquals(0, deadTarget.getHealth());
     }
 
+    @Test
+    void testCharacterCannotAttackItself() {
+        Character attacker = new Character("Fighter");
+
+        boolean attackSuccess = CombatSystem.attack(attacker, attacker, 200);
+
+        assertFalse(attackSuccess);
+        assertEquals(1000, attacker.getHealth());
+    }
+
 }
