@@ -20,4 +20,11 @@ class CharacterTest {
         character.receiveDamage(200);
         assertEquals(800, character.getHealth());
     }
+
+    @Test
+    void testCharacterDiesWhenHealthIsZero() {
+        Character character = new Character("Warrior");
+        character.receiveDamage(1000);
+        assertFalse(character.isAlive());
+    }
 }
