@@ -27,4 +27,16 @@ class CombatSystemTest {
         assertEquals(1000, target.getHealth());
     }
 
+    @Test
+    void testCannotAttackDeadCharacter() {
+        Character attacker = new Character("Warrior");
+        Character deadTarget = new Character("Skeleton");
+
+        deadTarget.receiveDamage(1000);
+        boolean attackSuccess = CombatSystem.attack(attacker, deadTarget, 200);
+
+        assertFalse(attackSuccess);
+        assertEquals(0, deadTarget.getHealth());
+    }
+
 }
