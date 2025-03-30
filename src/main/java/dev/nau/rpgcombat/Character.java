@@ -35,4 +35,8 @@ public class Character {
             this.alive = false;
         }
     }
+
+    public void heal(int amount) {
+        this.health += amount;
+    }
 }
