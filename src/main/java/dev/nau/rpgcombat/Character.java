@@ -37,6 +37,6 @@ public class Character {
     }
 
     public void heal(int amount) {
-        this.health += amount;
+        this.health = Math.min(1000, this.health + amount);
     }
 }
