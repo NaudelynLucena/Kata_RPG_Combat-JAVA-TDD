@@ -36,4 +36,12 @@ class CharacterTest {
         assertEquals(800, character.getHealth());
     }
 
+    @Test
+    void testHealCannotExceedMaxHealth() {
+        Character character = new Character("Cleric");
+        character.heal(500);
+
+        assertEquals(1000, character.getHealth());
+    }
+
 }
