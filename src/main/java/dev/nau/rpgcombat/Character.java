@@ -31,5 +31,8 @@ public class Character {
 
     public void receiveDamage(int amount) {
         this.health = Math.max(0, this.health - amount);
+        if (this.health == 0) {
+            this.alive = false;
+        }
     }
 }
