@@ -1,8 +1,10 @@
 package dev.nau.rpgcombat;
 
 public class CombatSystem {
-
-    public static void attack(Character attacker, Character target, int damage) {
+    public static boolean attack(Character attacker, Character target, int damage) {
+        if (!attacker.isAlive())
+            return false;
         target.receiveDamage(damage);
+        return true;
     }
 }
