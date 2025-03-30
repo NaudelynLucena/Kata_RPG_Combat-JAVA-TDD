@@ -1,4 +1,5 @@
 package dev.nau.rpgcombat;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,5 +12,12 @@ class CharacterTest {
         assertEquals(1000, character.getHealth());
         assertEquals(1, character.getLevel());
         assertTrue(character.isAlive());
+    }
+
+    @Test
+    void testReceiveDamage() {
+        Character character = new Character("Warrior");
+        character.receiveDamage(200);
+        assertEquals(800, character.getHealth());
     }
 }
