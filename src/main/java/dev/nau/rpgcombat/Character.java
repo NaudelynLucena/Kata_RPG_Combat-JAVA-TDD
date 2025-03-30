@@ -13,11 +13,23 @@ public class Character {
         this.alive = true;
     }
 
-    public String getName() {return name;}
+    public String getName() {
+        return name;
+    }
 
-    public int getHealth() {return health;}
+    public int getHealth() {
+        return health;
+    }
 
-    public int getLevel() {return level;}
+    public int getLevel() {
+        return level;
+    }
 
-    public boolean isAlive() {return alive;}
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void receiveDamage(int amount) {
+        this.health = Math.max(0, this.health - amount);
+    }
 }
